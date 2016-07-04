@@ -30,5 +30,5 @@ We summarized the Edgar Anderson's Iris Data with 50 observations for each speci
   <tr> <td align="right"> 6 </td> <td> Max.   :7.900   </td> <td> Max.   :4.400   </td> <td> Max.   :6.900   </td> <td> Max.   :2.500   </td> </tr>
    </table>
 
-
+Some error in slidify-shiny integration
 
