@@ -9,7 +9,7 @@ hitheme     : tomorrow      #
 widgets     : [mathjax, quiz, bootstrap, shiny, interactive,rmarkdown]
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
-logo    : sergio.jpeg
+    logo    : sergio.jpeg
 
 --- &twocol
 
