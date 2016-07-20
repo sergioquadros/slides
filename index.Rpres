@@ -1,0 +1,74 @@
+App and Slides for Iris Data
+========================================================
+left: 70%
+author: Sergio H. S. de Quadros
+date: 2016-07-20
+autosize: true
+transition: rotate
+transition-speed: slow
+
+***
+
+![alt text](sergio.jpeg)
+
+Iris: Flowers, Biologist and Data Scientist
+========================================================
+left: 30%
+
+![alt text](iris3.jpeg)
+
+![alt text](irisMedidas.jpeg)
+
+***
+
+- **Edgar Anderson** collected the data
+
+- **Ronald Aylmer Fisher** made [the linear discriminant](http://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1936.tb02137.x/abstract)
+
+Iris Data
+========================================================
+
+- 1. One Genus
+- 2. Three Species
+- 3. One or three distributions for each numeric variable?
+
+The observations by each species:
+
+```{r data,echo=FALSE,message=FALSE,warning=FALSE}
+data("iris")
+table(iris$Species)
+```
+
+How many distributions?
+
+
+How many distributions?
+========================================================
+
+```{r static_plots,echo=FALSE,message=FALSE,warning=FALSE}
+library(ggplot2)
+library(gridExtra)
+i1 <- ggplot(data = iris,aes(x = iris$Sepal.Length,y= ..count.., label = ..count..),
+             stat = "count", position = "dodge") + geom_histogram()
+i2 <- ggplot(data = iris,aes(x = iris$Sepal.Width, y = ..count.., label = ..count..),
+             stat = "count", position = "dodge") + geom_histogram()
+i3 <- ggplot(data = iris,aes(x = iris$Petal.Length, y = ..count.., label = ..count..),
+             stat = "count", position = "dodge") + geom_histogram()
+i4 <- ggplot(data = iris,aes(x = iris$Petal.Width, y = ..count.., label = ..count..),
+             stat = "count", position = "dodge") + geom_histogram()
+grid.arrange(i1,i2,i3,i4, ncol = 2, nrow = 2)
+
+```
+
+Iris Data: Some Exploratory Plots with Shiny
+===========================================================
+
+Use my app by this link for some exploratory plots of this beautiful problem of multiclassification:
+
+[https://sergioquadros.shinyapps.io/dev_data/](https://sergioquadros.shinyapps.io/dev_data/)
+
+Shiny, slidify and RStudio are the best; but a better integration between apps and presentation way is necessary and envolving fast:
+
+- [Shiny & RStudio presenter: see discussions below](http://rmarkdown.rstudio.com/authoring_embedded_shiny.html)
+
+-  [Shiny & Slidify](https://github.com/ramnathv/slidify/issues)
